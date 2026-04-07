@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vCard - Personal Portfolio</title>
+
+    <!--
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.ico"
+      type="image/x-icon"
+    />
+
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--
+    - #MAIN
+  -->
+
+    <main>
+      <!--
+      - #SIDEBAR
+    -->
+
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img
+              src="./assets/images/my_profile.png"
+              alt="Qiuyi Hong"
+              width="80"
+            />
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="Qiuyi Hong">Qiuyi Hong</h1>
+
+            <p class="title">AI Engineer & Data Scientist</p>
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
+
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+
+                <a href="mailto:qiuyi.hong.q.y@gmail.com" class="contact-link"
+                  >qiuyi.hong.q.y@gmail.com</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+
+                <a href="tel:+44 7927164256" class="contact-link"
+                  >+44 7927164256</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+
+                <address>Newcastle upon Tyne, United Kingdom</address>
+              </div>
+            </li>
+          </ul>
+
+          <div class="separator"></div>
+
+          <ul class="social-list">
+            <li class="social-item">
+              <a href="https://github.com/qiuyi-hong" class="social-link">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a
+                href="https://www.linkedin.com/in/qiuyi-hong/"
+                class="social-link"
+              >
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a
+                href="https://scholar.google.com/citations?user=vjk6Ke4AAAAJ&hl=en"
+                class="social-link"
+              >
+                <ion-icon name="school-outline"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!--
+      - #main-content
+    -->
+
+      <div class="main-content">
+        <!--
+        - #NAVBAR
+      -->
+
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Portfolio</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Contact</button>
+            </li>
+          </ul>
+
+          <button
+            class="theme-toggle-btn"
+            data-theme-btn
+            aria-label="Toggle light/dark theme"
+          >
+            <ion-icon name="sunny-outline" class="theme-icon sun"></ion-icon>
+            <ion-icon name="moon-outline" class="theme-icon moon"></ion-icon>
+          </button>
+        </nav>
+
+        <!--
+        - #ABOUT
+      -->
+
+        <article class="about active" data-page="about" id="about">
+          <header>
+            <h2 class="h2 article-title">About me</h2>
+          </header>
+
+          <section class="about-text">
+            <p>
+              I'm an AI Engineer and Data Scientist based in Newcastle upon
+              Tyne, United Kingdom. With a PhD in Data Science and experience
+              spanning energy systems research, full-stack development, and
+              applied machine learning, I build solutions that bridge the gap
+              between cutting-edge AI and real-world impact.
+            </p>
+
+            <p>
+              From autonomous ETL pipelines powered by LLMs to Transformer-based
+              forecasting models, I enjoy tackling complex problems with
+              practical, data-driven approaches. I have published research in
+              energy optimization, time-series forecasting, and game-theoretic
+              decision-making.
+            </p>
+          </section>
+
+          <!--
+          - service
+        -->
+
+          <section class="service">
+            <h3 class="h3 service-title">What i'm doing</h3>
+
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-dev.svg"
+                    alt="AI engineering icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">AI Engineering</h4>
+
+                  <p class="service-item-text">
+                    Building intelligent systems using LLMs, LangChain, RAG, and
+                    modern AI frameworks.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-design.svg"
+                    alt="machine learning icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Machine Learning</h4>
+
+                  <p class="service-item-text">
+                    Developing and deploying models for forecasting,
+                    classification, and optimization.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-app.svg"
+                    alt="data science icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Data Science</h4>
+
+                  <p class="service-item-text">
+                    End-to-end data pipelines, analysis, and visualization to
+                    drive decision-making.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-photo.svg"
+                    alt="energy research icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Energy Systems Research</h4>
+
+                  <p class="service-item-text">
+                    Applying optimization and AI to smart energy management and
+                    low-carbon technologies.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!--
+          - featured publications
+        -->
+
+          <section class="featured-publications">
+            <h3 class="h3 featured-publications-title">
+              Featured Publications
+            </h3>
+
+            <ul class="featured-publications-list">
+              <li class="featured-publication-item">
+                <div class="content-card featured-publication-card">
+                  <div class="featured-publication-icon">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                  </div>
+                  <h4 class="h4 featured-publication-title">
+                    A bilevel game-theoretic decision-making framework for
+                    strategic retailers
+                  </h4>
+                  <p class="featured-publication-venue">Applied Energy</p>
+                  <a
+                    href="https://doi.org/10.1016/j.apenergy.2023.121089"
+                    class="featured-publication-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read Paper
+                    <ion-icon name="open-outline"></ion-icon>
+                  </a>
+                </div>
+              </li>
+
+              <li class="featured-publication-item">
+                <div class="content-card featured-publication-card">
+                  <div class="featured-publication-icon">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                  </div>
+                  <h4 class="h4 featured-publication-title">
+                    Advancing Long-Term Multi-Energy Load Forecasting with
+                    Patchformer
+                  </h4>
+                  <p class="featured-publication-venue">arXiv</p>
+                  <a
+                    href="https://arxiv.org/abs/2410.01983"
+                    class="featured-publication-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read Paper
+                    <ion-icon name="open-outline"></ion-icon>
+                  </a>
+                </div>
+              </li>
+
+              <li class="featured-publication-item">
+                <div class="content-card featured-publication-card">
+                  <div class="featured-publication-icon">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                  </div>
+                  <h4 class="h4 featured-publication-title">
+                    Optimal Operation of ASHP-based Heating Systems for
+                    Dwellings
+                  </h4>
+                  <p class="featured-publication-venue">
+                    IEEE ISGT Europe 2025
+                  </p>
+                  <a
+                    href="#"
+                    class="featured-publication-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read Paper
+                    <ion-icon name="open-outline"></ion-icon>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #RESUME
+      -->
+
+        <article class="resume" data-page="resume" id="resume">
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
+
+          <a
+            href="./assets/CV/My_Resume_24_03_2026.pdf"
+            class="download-cv-btn"
+            download
+          >
+            <ion-icon name="download-outline"></ion-icon>
+            <span>Download CV</span>
+          </a>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Education</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Ph.D. in Data Science</h4>
+
+                <span>Oct 2020 — Jul 2024</span>
+
+                <p class="timeline-text">
+                  University of Essex, School of Mathematics, Statistics and
+                  Actuarial Science. Developed a smart hierarchical transactive
+                  energy system using bilevel optimization and metaheuristics.
+                  Built a Transformer-based long-term time-series forecasting
+                  model for multi-energy load prediction using PyTorch.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  M.Sc. in Banking and Finance
+                </h4>
+
+                <span>Sep 2018 — Sep 2019</span>
+
+                <p class="timeline-text">
+                  University of Sussex, Sussex Business School. Grade:
+                  Distinction (79%).
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  M.Sc. in Project Management
+                </h4>
+
+                <span>Sep 2017 — Sep 2018</span>
+
+                <p class="timeline-text">
+                  University of Sussex, Sussex Business School. Grade: Merit
+                  (62%).
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  B.Eng. in Chemical Engineering and Technology
+                </h4>
+
+                <span>Sep 2012 — Jun 2016</span>
+
+                <p class="timeline-text">Hebei University of Engineering.</p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Experience</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Data Scientist</h4>
+
+                <span>Oct 2025 — Mar 2026 · heatly, Leeds</span>
+
+                <p class="timeline-text">
+                  Built a complete autonomous ETL pipeline using LLMWhisperer,
+                  OpenAI API, and Python (Pandas). Developed a full-stack
+                  Node.js web application to estimate and compare heat pump vs
+                  gas boiler operational costs via the Glow API and Open-Meteo
+                  API.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Postdoctoral Research Associate in Data Science
+                </h4>
+
+                <span>Aug 2024 — Oct 2025 · Newcastle University</span>
+
+                <p class="timeline-text">
+                  Quantified and evaluated the value of low-carbon technologies
+                  (solar panels, electrical/thermal storage, heat pumps) within
+                  the smart home energy management system (SHEMS) framework.
+                  Reviewed roof-rental mechanisms in the UK and internationally.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Data & Analytics Intern</h4>
+
+                <span>Apr 2024 — Jun 2024 · Essex County Council</span>
+
+                <p class="timeline-text">
+                  Analysed dependence between service demand and complaints
+                  using Granger Causality Test and Distance Correlation in R.
+                  Visualised district measures across Essex using Power BI.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Research Officer</h4>
+
+                <span>Apr 2023 — Jul 2023 · University of Essex</span>
+
+                <p class="timeline-text">
+                  Developed dynamic programming and Dijkstra-based algorithms
+                  using Python to solve the shortest path problem with multiple
+                  destinations.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Assistant Lecturer</h4>
+
+                <span>Oct 2021 — Apr 2023 · University of Essex</span>
+
+                <p class="timeline-text">
+                  Taught machine learning techniques (regression,
+                  classification, clustering) in Statistical Methods, Modelling
+                  Experimental Data, and Applied Statistics. Taught coding in R
+                  and RStudio.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="skill">
+            <h3 class="h3 skills-title">My skills</h3>
+
+            <div class="skills-tags content-card">
+              <div class="skill-category">
+                <h5 class="h5 skill-category-title">AI & ML</h5>
+                <ul class="skill-tag-list">
+                  <li class="skill-tag">Python</li>
+                  <li class="skill-tag">PyTorch</li>
+                  <li class="skill-tag">TensorFlow</li>
+                  <li class="skill-tag">LLMs</li>
+                  <li class="skill-tag">LangChain</li>
+                  <li class="skill-tag">LangGraph</li>
+                  <li class="skill-tag">LangSmith</li>
+                  <li class="skill-tag">RAG</li>
+                  <li class="skill-tag">NLP</li>
+                  <li class="skill-tag">Computer Vision</li>
+                  <li class="skill-tag">Transformers</li>
+                  <li class="skill-tag">Deep Learning</li>
+                  <li class="skill-tag">Machine Learning</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h5 class="h5 skill-category-title">Data</h5>
+                <ul class="skill-tag-list">
+                  <li class="skill-tag">SQL</li>
+                  <li class="skill-tag">R</li>
+                  <li class="skill-tag">Pandas</li>
+                  <li class="skill-tag">Time Series Forecasting</li>
+                  <li class="skill-tag">Power BI</li>
+                  <li class="skill-tag">Operational Research</li>
+                  <li class="skill-tag">Metaheuristic Algorithms</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h5 class="h5 skill-category-title">Web & Software</h5>
+                <ul class="skill-tag-list">
+                  <li class="skill-tag">JavaScript/TypeScript</li>
+                  <li class="skill-tag">FastAPI</li>
+                  <li class="skill-tag">Full-Stack Web Development</li>
+                  <li class="skill-tag">Software Engineering</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h5 class="h5 skill-category-title">Tools</h5>
+                <ul class="skill-tag-list">
+                  <li class="skill-tag">MATLAB</li>
+                  <li class="skill-tag">Pyomo</li>
+                  <li class="skill-tag">LaTeX</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!--
+        - #PORTFOLIO
+      -->
+
+        <article class="portfolio" data-page="portfolio" id="portfolio">
+          <header>
+            <h2 class="h2 article-title">Portfolio</h2>
+          </header>
+
+          <section class="projects">
+            <ul class="filter-list">
+              <li class="filter-item">
+                <button class="active" data-filter-btn>All</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Projects</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Publications</button>
+              </li>
+            </ul>
+
+            <div class="filter-select-box">
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>
+                  Select category
+                </div>
+
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
+
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Projects</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Publications</button>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="project-list">
+              <!--
+              - Projects
+            -->
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="projects"
+              >
+                <a
+                  href="https://github.com/qiuyi-hong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder"
+                      data-initials="PF"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">Patchformer</h3>
+
+                  <p class="project-category">
+                    Transformer-based long-term multi-energy load forecasting
+                    model (PyTorch)
+                  </p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="projects"
+              >
+                <a
+                  href="https://github.com/qiuyi-hong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder"
+                      data-initials="HP"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">Heat Pump Cost Estimator</h3>
+
+                  <p class="project-category">
+                    Full-stack Node.js app comparing heat pump vs gas boiler
+                    operational costs
+                  </p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="projects"
+              >
+                <a
+                  href="https://github.com/qiuyi-hong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder"
+                      data-initials="ETL"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">Autonomous ETL Pipeline</h3>
+
+                  <p class="project-category">
+                    LLM-powered data extraction from PDFs and charts using
+                    LLMWhisperer & OpenAI API
+                  </p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="projects"
+              >
+                <a
+                  href="https://github.com/qiuyi-hong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder"
+                      data-initials="BEO"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">Bilevel Energy Optimization</h3>
+
+                  <p class="project-category">
+                    Game-theoretic decision-making for energy retailers using
+                    Python/Pyomo
+                  </p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="projects"
+              >
+                <a
+                  href="https://github.com/qiuyi-hong"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder"
+                      data-initials="SP"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">Shortest Path Algorithms</h3>
+
+                  <p class="project-category">
+                    Dynamic programming & Dijkstra-based multi-destination
+                    routing solvers
+                  </p>
+                </a>
+              </li>
+
+              <!--
+              - Publications
+            -->
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="publications"
+              >
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="document-text-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder publication"
+                      data-initials="IEEE"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">
+                    Optimal Operation of ASHP-based Heating Systems for
+                    Dwellings
+                  </h3>
+
+                  <p class="project-category">IEEE ISGT Europe 2025</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="publications"
+              >
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="document-text-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder publication"
+                      data-initials="CIRED"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">
+                    A Review of UK Business Models for Rooftop Solar PV Systems
+                  </h3>
+
+                  <p class="project-category">CIRED 2025</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="publications"
+              >
+                <a
+                  href="https://arxiv.org/abs/2410.01983"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="document-text-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder publication"
+                      data-initials="arXiv"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">
+                    Advancing Long-Term Multi-Energy Load Forecasting with
+                    Patchformer
+                  </h3>
+
+                  <p class="project-category">arXiv, 2024</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="publications"
+              >
+                <a
+                  href="https://doi.org/10.1016/j.apenergy.2023.121089"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="document-text-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder publication"
+                      data-initials="AE"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">
+                    A bilevel game-theoretic decision-making framework for
+                    strategic retailers
+                  </h3>
+
+                  <p class="project-category">Applied Energy, 2023</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="publications"
+              >
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="document-text-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder publication"
+                      data-initials="E"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">
+                    Customised Multi-Energy Pricing: Model and Solutions
+                  </h3>
+
+                  <p class="project-category">Energies, 2022</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="publications"
+              >
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="document-text-outline"></ion-icon>
+                    </div>
+
+                    <div
+                      class="project-img-placeholder publication"
+                      data-initials="S"
+                    ></div>
+                  </figure>
+
+                  <h3 class="project-title">
+                    Customized Multi-energy Pricing in Smart Grids
+                  </h3>
+
+                  <p class="project-category">Springer, 2022</p>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #CONTACT
+      -->
+
+        <article class="contact" data-page="contact" id="contact">
+          <header>
+            <h2 class="h2 article-title">Contact</h2>
+          </header>
+
+          <section class="mapbox" data-mapbox>
+            <figure>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73488.29893498498!2d-1.6816238!3d54.9782527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487d857e0c6f64cd%3A0x4b0dbc51e4e5d50c!2sNewcastle%20upon%20Tyne%2C%20UK!5e0!3m2!1sen!2suk!4v1647608789441!5m2!1sen!2suk"
+                width="400"
+                height="300"
+                loading="lazy"
+              ></iframe>
+            </figure>
+          </section>
+
+          <section class="contact-form">
+            <h3 class="h3 form-title">Contact Form</h3>
+
+            <form action="#" class="form" data-form>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="fullname"
+                  class="form-input"
+                  placeholder="Full name"
+                  required
+                  data-form-input
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Email address"
+                  required
+                  data-form-input
+                />
+              </div>
+
+              <textarea
+                name="message"
+                class="form-input"
+                placeholder="Your Message"
+                required
+                data-form-input
+              ></textarea>
+
+              <button class="form-btn" type="submit" disabled data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <!--
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

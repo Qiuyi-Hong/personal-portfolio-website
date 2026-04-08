@@ -99,40 +99,65 @@ for (let i = 0; i < formInputs.length; i++) {
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
+const pageNames = Array.from(pages, function (page) {
+  return page.dataset.page;
+});
+const defaultPage = pageNames[0];
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+const getPageNameFromHash = function () {
+  const hash = window.location.hash.substring(1).toLowerCase();
+
+  return pageNames.includes(hash) ? hash : defaultPage;
+};
+
+const getActivePageName = function () {
+  const activePage = document.querySelector("[data-page].active");
+
+  return activePage ? activePage.dataset.page : null;
+};
 
 // function to activate a page by name
 const activatePage = function (pageName) {
-  for (let i = 0; i < pages.length; i++) {
-    if (pageName === pages[i].dataset.page) {
-      pages[i].classList.add("active");
-      navigationLinks[i].classList.add("active");
-    } else {
-      pages[i].classList.remove("active");
-      navigationLinks[i].classList.remove("active");
-    }
+  const nextPage = pageNames.includes(pageName) ? pageName : defaultPage;
+
+  if (nextPage === getActivePageName()) {
+    return;
   }
+
+  for (let i = 0; i < pages.length; i++) {
+    const isActivePage = nextPage === pages[i].dataset.page;
+
+    pages[i].classList.toggle("active", isActivePage);
+    navigationLinks[i].classList.toggle("active", isActivePage);
+  }
+
   window.scrollTo(0, 0);
+};
+
+const syncPageWithHash = function () {
+  activatePage(getPageNameFromHash());
 };
 
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-    const pageName = this.innerHTML.toLowerCase();
+    const pageName = this.textContent.trim().toLowerCase();
+
     activatePage(pageName);
-    window.location.hash = pageName;
+
+    if (window.location.hash.substring(1).toLowerCase() !== pageName) {
+      history.pushState({ page: pageName }, "", `#${pageName}`);
+    }
   });
 }
 
 // hash-based routing: activate page from URL hash on load
-const hash = window.location.hash.substring(1);
-if (hash) {
-  activatePage(hash);
-}
+syncPageWithHash();
 
-// handle browser back/forward with hash changes
-window.addEventListener("hashchange", function () {
-  const newHash = window.location.hash.substring(1);
-  if (newHash) {
-    activatePage(newHash);
-  }
-});
+// handle browser back/forward and manual hash changes
+window.addEventListener("popstate", syncPageWithHash);
+window.addEventListener("hashchange", syncPageWithHash);

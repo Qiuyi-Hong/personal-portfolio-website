@@ -1,19 +1,148 @@
 "use strict";
 
 // theme toggle
+const themeControl = document.querySelector("[data-theme-control]");
 const themeBtn = document.querySelector("[data-theme-btn]");
-const storedTheme = localStorage.getItem("theme");
+const themePopover = document.querySelector("[data-theme-popover]");
+const themeOptions = document.querySelectorAll("[data-theme-option]");
+const themeMediaQuery =
+  typeof window.matchMedia === "function"
+    ? window.matchMedia("(prefers-color-scheme: dark)")
+    : null;
 
-if (storedTheme) {
-  document.body.setAttribute("data-theme", storedTheme);
+const getStoredThemePreference = function () {
+  try {
+    const storedTheme = localStorage.getItem("theme");
+
+    if (
+      storedTheme === "system" ||
+      storedTheme === "light" ||
+      storedTheme === "dark"
+    ) {
+      return storedTheme;
+    }
+  } catch (error) {
+    return "system";
+  }
+
+  return "system";
+};
+
+const setStoredThemePreference = function (themePreference) {
+  try {
+    localStorage.setItem("theme", themePreference);
+  } catch (error) {
+    return;
+  }
+};
+
+const getSystemTheme = function () {
+  if (!themeMediaQuery) {
+    return "dark";
+  }
+
+  return themeMediaQuery.matches ? "dark" : "light";
+};
+
+const resolveThemePreference = function (themePreference) {
+  return themePreference === "system" ? getSystemTheme() : themePreference;
+};
+
+let activeThemePreference = getStoredThemePreference();
+
+const syncThemeOptions = function () {
+  for (let i = 0; i < themeOptions.length; i++) {
+    const isActiveTheme = themeOptions[i].value === activeThemePreference;
+    const themeOption = themeOptions[i].closest(".theme-option");
+
+    themeOptions[i].checked = isActiveTheme;
+
+    if (themeOption) {
+      themeOption.classList.toggle("active", isActiveTheme);
+    }
+  }
+};
+
+const applyThemePreference = function () {
+  const appliedTheme = resolveThemePreference(activeThemePreference);
+
+  document.body.setAttribute("data-theme", appliedTheme);
+  syncThemeOptions();
+};
+
+const setThemePopoverState = function (isOpen) {
+  if (!themeControl || !themeBtn || !themePopover) {
+    return;
+  }
+
+  themeControl.classList.toggle("active", isOpen);
+  themeBtn.setAttribute("aria-expanded", String(isOpen));
+  themePopover.setAttribute("aria-hidden", String(!isOpen));
+};
+
+const closeThemePopover = function () {
+  setThemePopoverState(false);
+};
+
+const toggleThemePopover = function () {
+  if (!themeControl) {
+    return;
+  }
+
+  setThemePopoverState(!themeControl.classList.contains("active"));
+};
+
+applyThemePreference();
+
+if (themeControl && themeBtn && themePopover && themeOptions.length > 0) {
+  themeBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    toggleThemePopover();
+  });
+
+  for (let i = 0; i < themeOptions.length; i++) {
+    themeOptions[i].addEventListener("change", function () {
+      if (!this.checked) {
+        return;
+      }
+
+      activeThemePreference = this.value;
+      setStoredThemePreference(activeThemePreference);
+      applyThemePreference();
+      closeThemePopover();
+    });
+  }
+
+  document.addEventListener("click", function (event) {
+    if (
+      themeControl.classList.contains("active") &&
+      !themeControl.contains(event.target)
+    ) {
+      closeThemePopover();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && themeControl.classList.contains("active")) {
+      closeThemePopover();
+      themeBtn.focus();
+    }
+  });
+
+  if (themeMediaQuery) {
+    const handleSystemThemeChange = function () {
+      if (activeThemePreference === "system") {
+        applyThemePreference();
+      }
+    };
+
+    if (typeof themeMediaQuery.addEventListener === "function") {
+      themeMediaQuery.addEventListener("change", handleSystemThemeChange);
+    } else if (typeof themeMediaQuery.addListener === "function") {
+      themeMediaQuery.addListener(handleSystemThemeChange);
+    }
+  }
 }
-
-themeBtn.addEventListener("click", function () {
-  const currentTheme = document.body.getAttribute("data-theme");
-  const newTheme = currentTheme === "light" ? "dark" : "light";
-  document.body.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
-});
 
 // element toggle function
 const elementToggleFunc = function (elem) {

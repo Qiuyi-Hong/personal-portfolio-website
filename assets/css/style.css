@@ -551,12 +551,20 @@ main {
   #THEME TOGGLE
 \*-----------------------------------*/
 
-.theme-toggle-btn {
+.theme-control {
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-  background: var(--eerie-black-2);
+  z-index: 1;
+}
+
+.theme-toggle-btn {
+  position: relative;
+  top: auto;
+  right: auto;
+  transform: none;
+  background: var(--bg-gradient-jet);
   border: 1px solid var(--jet);
   color: var(--light-gray);
   width: 35px;
@@ -573,6 +581,115 @@ main {
 .theme-toggle-btn:focus {
   color: var(--claude);
   border-color: var(--claude);
+}
+
+.theme-control.active .theme-toggle-btn {
+  color: var(--claude);
+  border-color: var(--claude);
+}
+
+.theme-popover {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 12px);
+  min-width: 160px;
+  padding: 10px;
+  border: 1px solid var(--jet);
+  border-radius: 16px;
+  background: var(--bg-gradient-jet);
+  box-shadow: var(--shadow-2);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: var(--transition-1);
+}
+
+.theme-control.active .theme-popover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.theme-popover-title {
+  margin-bottom: 8px;
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  color: var(--light-gray);
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.theme-option:hover,
+.theme-option:focus-within {
+  background: var(--eerie-black-2);
+  color: var(--white-2);
+}
+
+.theme-option.active {
+  background: hsla(15, 63%, 60%, 0.14);
+  color: var(--white-2);
+}
+
+.theme-option-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  border: 1px solid var(--light-gray-70);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: var(--transition-1);
+}
+
+.theme-option:hover .theme-option-input,
+.theme-option:focus-within .theme-option-input,
+.theme-option.active .theme-option-input {
+  border-color: var(--claude);
+}
+
+.theme-option.active .theme-option-input {
+  background: radial-gradient(circle, var(--claude) 0 45%, transparent 46%);
+}
+
+.theme-option-input:focus-visible {
+  outline: 2px solid var(--claude);
+  outline-offset: 2px;
+}
+
+.theme-option-copy {
+  font-size: var(--fs-7);
+  font-weight: var(--fw-400);
+}
+
+.theme-option.active .theme-option-copy {
+  font-weight: var(--fw-500);
+}
+
+[data-theme="light"] .theme-popover {
+  border-color: hsl(0, 0%, 76%);
+  box-shadow: 0 18px 36px hsla(15, 20%, 35%, 0.12);
+}
+
+[data-theme="light"] .theme-option:hover,
+[data-theme="light"] .theme-option:focus-within {
+  background: hsla(15, 63%, 60%, 0.08);
 }
 
 .theme-toggle-btn .sun {
@@ -1903,8 +2020,13 @@ textarea.form-input::-webkit-resizer {
     font-weight: var(--fw-500);
   }
 
-  .theme-toggle-btn {
+  .theme-control {
     right: 15px;
+  }
+
+  .theme-popover {
+    top: calc(100% + 12px);
+    bottom: auto;
   }
 
   /**

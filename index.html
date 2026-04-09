@@ -177,14 +177,66 @@
             </li>
           </ul>
 
-          <button
-            class="theme-toggle-btn"
-            data-theme-btn
-            aria-label="Toggle light/dark theme"
-          >
-            <ion-icon name="sunny-outline" class="theme-icon sun"></ion-icon>
-            <ion-icon name="moon-outline" class="theme-icon moon"></ion-icon>
-          </button>
+          <div class="theme-control" data-theme-control>
+            <button
+              class="theme-toggle-btn"
+              data-theme-btn
+              type="button"
+              aria-label="Open theme settings"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="theme-popover"
+            >
+              <ion-icon name="sunny-outline" class="theme-icon sun"></ion-icon>
+              <ion-icon name="moon-outline" class="theme-icon moon"></ion-icon>
+            </button>
+
+            <div
+              class="theme-popover"
+              data-theme-popover
+              id="theme-popover"
+              role="group"
+              aria-labelledby="theme-popover-title"
+              aria-hidden="true"
+            >
+              <p class="theme-popover-title" id="theme-popover-title">
+                Theme mode
+              </p>
+
+              <label class="theme-option">
+                <input
+                  class="theme-option-input"
+                  type="radio"
+                  name="theme-preference"
+                  value="system"
+                  data-theme-option
+                />
+                <span class="theme-option-copy">System</span>
+              </label>
+
+              <label class="theme-option">
+                <input
+                  class="theme-option-input"
+                  type="radio"
+                  name="theme-preference"
+                  value="light"
+                  data-theme-option
+                />
+                <span class="theme-option-copy">Light</span>
+              </label>
+
+              <label class="theme-option">
+                <input
+                  class="theme-option-input"
+                  type="radio"
+                  name="theme-preference"
+                  value="dark"
+                  data-theme-option
+                />
+                <span class="theme-option-copy">Dark</span>
+              </label>
+            </div>
+          </div>
         </nav>
 
         <!--

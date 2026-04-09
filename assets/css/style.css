@@ -615,7 +615,7 @@ main {
 
 .theme-popover-title {
   margin-bottom: 8px;
-  color: var(--orange-yellow-crayola);
+  color: var(--claude);
   font-size: var(--fs-8);
   font-weight: var(--fw-600);
   letter-spacing: 0.04em;

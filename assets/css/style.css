@@ -59,7 +59,8 @@
   --white-2: hsl(0, 0%, 98%);
   --orange-yellow-crayola: hsl(45, 100%, 72%);
   --orange: hsl(35, 100%, 46%);
-  --vegas-gold: hsl(45, 54%, 58%);
+  /* Claude color */
+  --claude: hsl(15, 63%, 60%);
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
@@ -154,6 +155,8 @@
   --white-2: hsl(0, 0%, 20%);
   --orange-yellow-crayola: hsl(45, 100%, 50%);
   --orange: hsl(35, 100%, 46%);
+  /* Claude color */
+  --claude: hsl(15, 63%, 60%);
   --vegas-gold: hsl(45, 54%, 42%);
   --light-gray: hsl(0, 0%, 35%);
   --light-gray-70: hsla(0, 0%, 35%, 0.7);
@@ -212,12 +215,12 @@ textarea {
 }
 
 ::selection {
-  background: var(--orange);
+  background: var(--claude);
   color: var(--smoky-black);
 }
 
 :focus {
-  outline-color: var(--orange);
+  outline-color: var(--claude);
 }
 
 html {
@@ -259,7 +262,7 @@ article {
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  color: var(--orange);
+  color: var(--claude);
   box-shadow: var(--shadow-1);
 }
 
@@ -323,7 +326,7 @@ article.active {
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--orange);
+  background: var(--claude);
   border-radius: 3px;
 }
 
@@ -338,7 +341,7 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--orange);
+  background: var(--claude);
   border-radius: 5px;
 }
 
@@ -420,7 +423,7 @@ main {
   right: -15px;
   border-radius: 0 15px;
   font-size: 13px;
-  color: var(--orange);
+  color: var(--claude);
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
   padding: 10px;
@@ -432,8 +435,8 @@ main {
 .info_more-btn:hover,
 .info_more-btn:focus {
   color: var(--eerie-black-1);
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--claude);
+  border-color: var(--claude);
 }
 
 .info_more-btn span {
@@ -541,7 +544,7 @@ main {
 }
 
 .navbar-link.active {
-  color: var(--orange);
+  color: var(--claude);
 }
 
 /*-----------------------------------*\
@@ -568,8 +571,8 @@ main {
 
 .theme-toggle-btn:hover,
 .theme-toggle-btn:focus {
-  color: var(--orange);
-  border-color: var(--orange);
+  color: var(--claude);
+  border-color: var(--claude);
 }
 
 .theme-toggle-btn .sun {
@@ -638,7 +641,7 @@ main {
 .service-icon-box {
   margin-bottom: 10px;
   font-size: 2em;
-  color: hsl(35, 100%, 46%);
+  color: var(--claude);
 }
 
 .service-icon-box img {
@@ -805,8 +808,8 @@ main {
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   color: var(--eerie-black-1);
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--claude);
+  border-color: var(--claude);
 }
 
 .modal-close-btn ion-icon {
@@ -924,7 +927,7 @@ main {
 }
 
 .timeline-list span {
-  color: var(--orange);
+  color: var(--claude);
   font-weight: var(--fw-400);
   line-height: 1.6;
 }
@@ -946,7 +949,7 @@ main {
   left: -33px;
   height: 6px;
   width: 6px;
-  background: var(--orange);
+  background: var(--claude);
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--jet);
 }
@@ -1068,7 +1071,7 @@ main {
 }
 
 .select-item button:hover {
-  color: var(--orange);
+  color: var(--claude);
   background: var(--onyx);
 }
 
@@ -1130,7 +1133,7 @@ main {
   --scale: 0.8;
 
   background: var(--jet);
-  color: var(--orange);
+  color: var(--claude);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1254,7 +1257,7 @@ main {
 }
 
 .blog-post-item > a:hover .blog-item-title {
-  color: var(--orange);
+  color: var(--claude);
 }
 
 .blog-text {
@@ -1318,7 +1321,7 @@ main {
 }
 
 .form-input:focus {
-  border-color: var(--orange);
+  border-color: var(--claude);
 }
 
 textarea.form-input {
@@ -1340,7 +1343,7 @@ textarea.form-input::-webkit-resizer {
 .form-btn {
   width: 100%;
   background: var(--eerie-black-2);
-  color: var(--orange);
+  color: var(--claude);
   border: 1px solid var(--jet);
   display: flex;
   justify-content: center;
@@ -1360,8 +1363,8 @@ textarea.form-input::-webkit-resizer {
 
 .form-btn:hover {
   color: var(--eerie-black-1);
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--claude);
+  border-color: var(--claude);
 }
 
 .form-btn:disabled {
@@ -1370,7 +1373,7 @@ textarea.form-input::-webkit-resizer {
 }
 
 .form-btn:disabled:hover {
-  color: var(--orange);
+  color: var(--claude);
   background: var(--eerie-black-2);
   border-color: var(--jet);
 }
@@ -1808,7 +1811,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .filter-item button.active {
-    color: var(--orange);
+    color: var(--claude);
   }
 
   /* portfolio and blog grid */
@@ -2107,7 +2110,7 @@ textarea.form-input::-webkit-resizer {
 }
 
 .download-cv-btn:hover {
-  background: var(--orange);
+  background: var(--claude);
 }
 
 .download-cv-btn wa-icon {
@@ -2159,8 +2162,8 @@ textarea.form-input::-webkit-resizer {
 }
 
 .skill-tag:hover {
-  color: var(--orange);
-  border-color: var(--orange);
+  color: var(--claude);
+  border-color: var(--claude);
 }
 
 /* Skill tag entrance animation */
@@ -2221,7 +2224,7 @@ textarea.form-input::-webkit-resizer {
 }
 
 .featured-publication-icon {
-  color: var(--orange);
+  color: var(--claude);
   font-size: 28px;
   line-height: 1;
 }
@@ -2242,7 +2245,7 @@ textarea.form-input::-webkit-resizer {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  color: var(--orange);
+  color: var(--claude);
   font-size: var(--fs-7);
   font-weight: var(--fw-500);
   text-decoration: none;

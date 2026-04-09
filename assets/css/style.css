@@ -974,7 +974,7 @@ main {
 }
 
 .skill {
-      margin-bottom: 35px;
+  margin-bottom: 35px;
 }
 
 .skill .title-wrapper {
@@ -2005,8 +2005,9 @@ textarea.form-input::-webkit-resizer {
   }
 
   .main-content {
-    min-width: 75%;
-    width: 75%;
+    flex: 1;
+    min-width: 0;
+    width: auto;
     margin: 0;
   }
 
@@ -2019,6 +2020,8 @@ textarea.form-input::-webkit-resizer {
     top: 60px;
     max-height: max-content;
     height: 100%;
+    width: 340px;
+    min-width: 340px;
     margin-bottom: 0;
     padding-top: 60px;
     z-index: 1;
@@ -2055,9 +2058,8 @@ textarea.form-input::-webkit-resizer {
   }
 
   .contact-info :is(.contact-link) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .contact-info :is(.contact-link, time, address) {

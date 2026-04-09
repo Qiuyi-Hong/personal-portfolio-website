@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vCard - Personal Portfolio</title>
+    <title>Qiuyi Hong</title>
 
     <!--
     - favicon
@@ -29,6 +29,15 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://ka-f.webawesome.com/webawesome@3.5.0/styles/webawesome.css"
+    /> -->
+    <script
+      type="module"
+      src="https://ka-f.webawesome.com/webawesome@3.5.0/webawesome.loader.js"
+    ></script>
   </head>
 
   <body>
@@ -70,7 +79,7 @@
           <ul class="contacts-list">
             <li class="contact-item">
               <div class="icon-box">
-                <ion-icon name="mail-outline"></ion-icon>
+                <wa-icon name="envelope"></wa-icon>
               </div>
 
               <div class="contact-info">
@@ -84,7 +93,7 @@
 
             <li class="contact-item">
               <div class="icon-box">
-                <ion-icon name="phone-portrait-outline"></ion-icon>
+                <wa-icon name="phone"></wa-icon>
               </div>
 
               <div class="contact-info">
@@ -98,7 +107,7 @@
 
             <li class="contact-item">
               <div class="icon-box">
-                <ion-icon name="location-outline"></ion-icon>
+                <wa-icon name="location-dot"></wa-icon>
               </div>
 
               <div class="contact-info">
@@ -114,7 +123,7 @@
           <ul class="social-list">
             <li class="social-item">
               <a href="https://github.com/qiuyi-hong" class="social-link">
-                <ion-icon name="logo-github"></ion-icon>
+                <wa-icon name="github" family="brands"></wa-icon>
               </a>
             </li>
 
@@ -123,7 +132,7 @@
                 href="https://www.linkedin.com/in/qiuyi-hong/"
                 class="social-link"
               >
-                <ion-icon name="logo-linkedin"></ion-icon>
+                <wa-icon name="linkedin" family="brands"></wa-icon>
               </a>
             </li>
 
@@ -132,7 +141,8 @@
                 href="https://scholar.google.com/citations?user=vjk6Ke4AAAAJ&hl=en"
                 class="social-link"
               >
-                <ion-icon name="school-outline"></ion-icon>
+                <!-- <ion-icon name="school-outline"></ion-icon> -->
+                <wa-icon name="google-scholar" family="brands"></wa-icon>
               </a>
             </li>
           </ul>
@@ -214,11 +224,12 @@
             <ul class="service-list">
               <li class="service-item">
                 <div class="service-icon-box">
-                  <img
+                  <!-- <img
                     src="./assets/images/icon-dev.svg"
                     alt="AI engineering icon"
                     width="40"
-                  />
+                  /> -->
+                  <wa-icon name="robot"></wa-icon>
                 </div>
 
                 <div class="service-content-box">
@@ -233,11 +244,12 @@
 
               <li class="service-item">
                 <div class="service-icon-box">
-                  <img
+                  <!-- <img
                     src="./assets/images/icon-design.svg"
                     alt="machine learning icon"
                     width="40"
-                  />
+                  /> -->
+                  <wa-icon name="brain"></wa-icon>
                 </div>
 
                 <div class="service-content-box">
@@ -252,11 +264,12 @@
 
               <li class="service-item">
                 <div class="service-icon-box">
-                  <img
+                  <!-- <img
                     src="./assets/images/icon-app.svg"
                     alt="data science icon"
                     width="40"
-                  />
+                  /> -->
+                  <wa-icon name="magnifying-glass-chart"></wa-icon>
                 </div>
 
                 <div class="service-content-box">
@@ -271,11 +284,12 @@
 
               <li class="service-item">
                 <div class="service-icon-box">
-                  <img
+                  <!-- <img
                     src="./assets/images/icon-photo.svg"
                     alt="energy research icon"
                     width="40"
-                  />
+                  /> -->
+                  <wa-icon name="bolt"></wa-icon>
                 </div>
 
                 <div class="service-content-box">
@@ -288,6 +302,63 @@
                 </div>
               </li>
             </ul>
+          </section>
+
+          <section class="skill">
+            <h3 class="h3 skills-title">My skills</h3>
+
+            <div class="skills-tags content-card">
+              <div class="skill-category">
+                <h5 class="h5 skill-category-title">AI & ML</h5>
+                <ul class="skill-tag-list">
+                  <li class="skill-tag">Python</li>
+                  <li class="skill-tag">PyTorch</li>
+                  <li class="skill-tag">TensorFlow</li>
+                  <li class="skill-tag">LLMs</li>
+                  <li class="skill-tag">LangChain</li>
+                  <li class="skill-tag">LangGraph</li>
+                  <li class="skill-tag">LangSmith</li>
+                  <li class="skill-tag">RAG</li>
+                  <li class="skill-tag">NLP</li>
+                  <li class="skill-tag">Computer Vision</li>
+                  <li class="skill-tag">Transformers</li>
+                  <li class="skill-tag">Deep Learning</li>
+                  <li class="skill-tag">Machine Learning</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h5 class="h5 skill-category-title">Data</h5>
+                <ul class="skill-tag-list">
+                  <li class="skill-tag">SQL</li>
+                  <li class="skill-tag">R</li>
+                  <li class="skill-tag">Pandas</li>
+                  <li class="skill-tag">Time Series Forecasting</li>
+                  <li class="skill-tag">Power BI</li>
+                  <li class="skill-tag">Operational Research</li>
+                  <li class="skill-tag">Metaheuristic Algorithms</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h5 class="h5 skill-category-title">Web & Software</h5>
+                <ul class="skill-tag-list">
+                  <li class="skill-tag">JavaScript/TypeScript</li>
+                  <li class="skill-tag">FastAPI</li>
+                  <li class="skill-tag">Full-Stack Web Development</li>
+                  <li class="skill-tag">Software Engineering</li>
+                </ul>
+              </div>
+
+              <div class="skill-category">
+                <h5 class="h5 skill-category-title">Tools</h5>
+                <ul class="skill-tag-list">
+                  <li class="skill-tag">MATLAB</li>
+                  <li class="skill-tag">Pyomo</li>
+                  <li class="skill-tag">LaTeX</li>
+                </ul>
+              </div>
+            </div>
           </section>
 
           <!--
@@ -303,7 +374,7 @@
               <li class="featured-publication-item">
                 <div class="content-card featured-publication-card">
                   <div class="featured-publication-icon">
-                    <ion-icon name="document-text-outline"></ion-icon>
+                    <wa-icon name="file-lines"></wa-icon>
                   </div>
                   <h4 class="h4 featured-publication-title">
                     A bilevel game-theoretic decision-making framework for
@@ -325,7 +396,7 @@
               <li class="featured-publication-item">
                 <div class="content-card featured-publication-card">
                   <div class="featured-publication-icon">
-                    <ion-icon name="document-text-outline"></ion-icon>
+                    <wa-icon name="file-lines"></wa-icon>
                   </div>
                   <h4 class="h4 featured-publication-title">
                     Advancing Long-Term Multi-Energy Load Forecasting with
@@ -339,7 +410,7 @@
                     rel="noopener noreferrer"
                   >
                     Read Paper
-                    <ion-icon name="open-outline"></ion-icon>
+                    <wa-icon name="open"></wa-icon>
                   </a>
                 </div>
               </li>
@@ -347,7 +418,7 @@
               <li class="featured-publication-item">
                 <div class="content-card featured-publication-card">
                   <div class="featured-publication-icon">
-                    <ion-icon name="document-text-outline"></ion-icon>
+                    <wa-icon name="file-lines"></wa-icon>
                   </div>
                   <h4 class="h4 featured-publication-title">
                     Optimal Operation of ASHP-based Heating Systems for
@@ -363,7 +434,7 @@
                     rel="noopener noreferrer"
                   >
                     Read Paper
-                    <ion-icon name="open-outline"></ion-icon>
+                    <wa-icon name="open"></wa-icon>
                   </a>
                 </div>
               </li>
@@ -385,76 +456,14 @@
             class="download-cv-btn"
             download
           >
-            <ion-icon name="download-outline"></ion-icon>
+            <wa-icon name="file-arrow-down"></wa-icon>
             <span>Download CV</span>
           </a>
 
           <section class="timeline">
             <div class="title-wrapper">
               <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
-              <h3 class="h3">Education</h3>
-            </div>
-
-            <ol class="timeline-list">
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Ph.D. in Data Science</h4>
-
-                <span>Oct 2020 — Jul 2024</span>
-
-                <p class="timeline-text">
-                  University of Essex, School of Mathematics, Statistics and
-                  Actuarial Science. Developed a smart hierarchical transactive
-                  energy system using bilevel optimization and metaheuristics.
-                  Built a Transformer-based long-term time-series forecasting
-                  model for multi-energy load prediction using PyTorch.
-                </p>
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  M.Sc. in Banking and Finance
-                </h4>
-
-                <span>Sep 2018 — Sep 2019</span>
-
-                <p class="timeline-text">
-                  University of Sussex, Sussex Business School. Grade:
-                  Distinction (79%).
-                </p>
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  M.Sc. in Project Management
-                </h4>
-
-                <span>Sep 2017 — Sep 2018</span>
-
-                <p class="timeline-text">
-                  University of Sussex, Sussex Business School. Grade: Merit
-                  (62%).
-                </p>
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  B.Eng. in Chemical Engineering and Technology
-                </h4>
-
-                <span>Sep 2012 — Jun 2016</span>
-
-                <p class="timeline-text">Hebei University of Engineering.</p>
-              </li>
-            </ol>
-          </section>
-
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
+                <wa-icon name="briefcase"></wa-icon>
               </div>
 
               <h3 class="h3">Experience</h3>
@@ -529,61 +538,66 @@
             </ol>
           </section>
 
-          <section class="skill">
-            <h3 class="h3 skills-title">My skills</h3>
-
-            <div class="skills-tags content-card">
-              <div class="skill-category">
-                <h5 class="h5 skill-category-title">AI & ML</h5>
-                <ul class="skill-tag-list">
-                  <li class="skill-tag">Python</li>
-                  <li class="skill-tag">PyTorch</li>
-                  <li class="skill-tag">TensorFlow</li>
-                  <li class="skill-tag">LLMs</li>
-                  <li class="skill-tag">LangChain</li>
-                  <li class="skill-tag">LangGraph</li>
-                  <li class="skill-tag">LangSmith</li>
-                  <li class="skill-tag">RAG</li>
-                  <li class="skill-tag">NLP</li>
-                  <li class="skill-tag">Computer Vision</li>
-                  <li class="skill-tag">Transformers</li>
-                  <li class="skill-tag">Deep Learning</li>
-                  <li class="skill-tag">Machine Learning</li>
-                </ul>
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <wa-icon name="book"></wa-icon>
               </div>
 
-              <div class="skill-category">
-                <h5 class="h5 skill-category-title">Data</h5>
-                <ul class="skill-tag-list">
-                  <li class="skill-tag">SQL</li>
-                  <li class="skill-tag">R</li>
-                  <li class="skill-tag">Pandas</li>
-                  <li class="skill-tag">Time Series Forecasting</li>
-                  <li class="skill-tag">Power BI</li>
-                  <li class="skill-tag">Operational Research</li>
-                  <li class="skill-tag">Metaheuristic Algorithms</li>
-                </ul>
-              </div>
-
-              <div class="skill-category">
-                <h5 class="h5 skill-category-title">Web & Software</h5>
-                <ul class="skill-tag-list">
-                  <li class="skill-tag">JavaScript/TypeScript</li>
-                  <li class="skill-tag">FastAPI</li>
-                  <li class="skill-tag">Full-Stack Web Development</li>
-                  <li class="skill-tag">Software Engineering</li>
-                </ul>
-              </div>
-
-              <div class="skill-category">
-                <h5 class="h5 skill-category-title">Tools</h5>
-                <ul class="skill-tag-list">
-                  <li class="skill-tag">MATLAB</li>
-                  <li class="skill-tag">Pyomo</li>
-                  <li class="skill-tag">LaTeX</li>
-                </ul>
-              </div>
+              <h3 class="h3">Education</h3>
             </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Ph.D. in Data Science</h4>
+
+                <span>Oct 2020 — Jul 2024</span>
+
+                <p class="timeline-text">
+                  University of Essex, School of Mathematics, Statistics and
+                  Actuarial Science. Developed a smart hierarchical transactive
+                  energy system using bilevel optimization and metaheuristics.
+                  Built a Transformer-based long-term time-series forecasting
+                  model for multi-energy load prediction using PyTorch.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  M.Sc. in Banking and Finance
+                </h4>
+
+                <span>Sep 2018 — Sep 2019</span>
+
+                <p class="timeline-text">
+                  University of Sussex, Sussex Business School. Grade:
+                  Distinction (79%).
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  M.Sc. in Project Management
+                </h4>
+
+                <span>Sep 2017 — Sep 2018</span>
+
+                <p class="timeline-text">
+                  University of Sussex, Sussex Business School. Grade: Merit
+                  (62%).
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  B.Eng. in Chemical Engineering and Technology
+                </h4>
+
+                <span>Sep 2012 — Jun 2016</span>
+
+                <p class="timeline-text">Hebei University of Engineering.</p>
+              </li>
+            </ol>
           </section>
         </article>
 

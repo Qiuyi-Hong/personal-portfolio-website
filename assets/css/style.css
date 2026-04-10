@@ -1489,6 +1489,19 @@ main {
   margin-bottom: 10px;
 }
 
+.contact-form-card {
+  background: var(--bg-gradient-jet);
+  border: 1px solid var(--jet);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--shadow-2);
+}
+
+.contact-form-content {
+  display: grid;
+  gap: 25px;
+}
+
 .form-title {
   margin-bottom: 20px;
 }
@@ -1496,34 +1509,59 @@ main {
 .input-wrapper {
   display: grid;
   grid-template-columns: 1fr;
+  align-items: start;
   gap: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 0;
+}
+
+.form-field {
+  display: grid;
+  gap: 10px;
+}
+
+.form-label {
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+}
+
+.form-helper {
+  color: var(--light-gray-70);
+  font-size: var(--fs-7);
+  line-height: 1.5;
 }
 
 .form-input {
+  background: var(--eerie-black-1);
   color: var(--white-2);
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
-  padding: 13px 20px;
+  padding: 14px 18px;
   border: 1px solid var(--jet);
   border-radius: 14px;
   outline: none;
+  transition:
+    border-color var(--transition-1),
+    box-shadow var(--transition-1),
+    background-color var(--transition-1);
 }
 
 .form-input::placeholder {
-  font-weight: var(--fw-500);
+  color: var(--light-gray-70);
+  font-weight: var(--fw-400);
 }
 
 .form-input:focus {
   border-color: var(--claude);
+  box-shadow: 0 0 0 3px hsla(15, 63%, 60%, 0.15);
 }
 
 textarea.form-input {
-  min-height: 100px;
-  height: 120px;
-  max-height: 200px;
+  min-height: 140px;
+  height: 160px;
+  max-height: 260px;
   resize: vertical;
-  margin-bottom: 25px;
+  margin-bottom: 0;
 }
 
 textarea.form-input::-webkit-resizer {
@@ -1532,6 +1570,10 @@ textarea.form-input::-webkit-resizer {
 
 .form-input:focus:invalid {
   border-color: var(--bittersweet-shimmer);
+}
+
+.form-actions {
+  display: flex;
 }
 
 .form-btn {
@@ -1551,7 +1593,7 @@ textarea.form-input::-webkit-resizer {
   transition: var(--transition-1);
 }
 
-.form-btn ion-icon {
+.form-btn :is(ion-icon, wa-icon) {
   font-size: 16px;
 }
 
@@ -1900,9 +1942,13 @@ textarea.form-input::-webkit-resizer {
     border-radius: 18px;
   }
 
+  .contact-form-card {
+    padding: 24px;
+  }
+
   .input-wrapper {
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
   }
 
   .form-input {
@@ -1910,7 +1956,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   textarea.form-input {
-    margin-bottom: 30px;
+    margin-bottom: 0;
   }
 
   .form-btn {
@@ -2023,9 +2069,12 @@ textarea.form-input::-webkit-resizer {
     grid-template-columns: 1fr 1fr;
   }
 
+  .form-actions {
+    justify-content: flex-end;
+  }
+
   .form-btn {
     width: max-content;
-    margin-left: auto;
   }
 }
 

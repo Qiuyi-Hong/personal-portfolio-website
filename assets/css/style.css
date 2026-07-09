@@ -2551,36 +2551,201 @@ textarea.form-input::-webkit-resizer {
 }
 
 /*-----------------------------------*\
-  #PROJECT PLACEHOLDER IMAGES
+  #PORTFOLIO THUMBNAIL COMPONENT
 \*-----------------------------------*/
 
-.project-img-placeholder {
+.portfolio-thumb {
+  --thumb-accent: var(--claude);
+  --thumb-accent-2: var(--orange-yellow-crayola);
+  --thumb-bg: linear-gradient(135deg, hsl(240, 2%, 15%), hsl(240, 3%, 24%));
+  --thumb-grid: hsla(0, 0%, 100%, 0.08);
+
+  position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--fs-1);
-  font-weight: var(--fw-600);
-  color: var(--white-2);
-  background: linear-gradient(
-    135deg,
-    hsl(240, 2%, 18%) 0%,
-    hsl(240, 2%, 25%) 100%
-  );
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px;
   border-radius: 16px;
+  overflow: hidden;
+  color: var(--white-2);
+  background: var(--thumb-bg);
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.08);
+  isolation: isolate;
+  transition:
+    transform var(--transition-1),
+    filter var(--transition-1);
 }
 
-.project-img-placeholder::after {
-  content: attr(data-initials);
+.portfolio-thumb::before,
+.portfolio-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
-.project-img-placeholder.publication {
-  background: linear-gradient(
-    135deg,
-    hsl(45, 30%, 20%) 0%,
-    hsl(45, 20%, 30%) 100%
-  );
+.portfolio-thumb::before {
+  background:
+    radial-gradient(circle at 20% 18%, var(--thumb-accent) 0, transparent 26%),
+    radial-gradient(circle at 82% 72%, var(--thumb-accent-2) 0, transparent 30%);
+  opacity: 0.28;
+  z-index: -2;
+  transition:
+    transform var(--transition-1),
+    opacity var(--transition-1);
+}
+
+.portfolio-thumb::after {
+  background-image:
+    linear-gradient(var(--thumb-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--thumb-grid) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(135deg, black, transparent 78%);
+  opacity: 0.72;
+  z-index: -1;
+  transition: background-position var(--transition-1);
+}
+
+.project-item > a:hover .portfolio-thumb {
+  transform: scale(1.03);
+  filter: saturate(1.08);
+}
+
+.project-item > a:hover .portfolio-thumb::before {
+  transform: translate3d(8px, -8px, 0) scale(1.06);
+  opacity: 0.36;
+}
+
+.project-item > a:hover .portfolio-thumb::after {
+  background-position: 12px -12px;
+}
+
+.portfolio-thumb__badge,
+.portfolio-thumb__title,
+.portfolio-thumb__meta,
+.portfolio-thumb__lines {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-thumb__badge {
+  align-self: flex-start;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: hsla(0, 0%, 100%, 0.13);
+  color: var(--white-2);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  line-height: 1;
+  letter-spacing: 0;
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.14);
+}
+
+.portfolio-thumb__title {
+  max-width: 82%;
+  color: inherit;
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  line-height: 3.6;
+}
+
+.portfolio-thumb__meta {
+  max-width: 78%;
+  color: hsla(0, 0%, 100%, 0.72);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  line-height: 1.35;
+}
+
+.portfolio-thumb__lines {
+  position: absolute;
+  right: 2px;
+  bottom: 17px;
+  width: min(42%, 50px);
+  height: 42px;
+  opacity: 0.72;
+  background:
+    linear-gradient(90deg, var(--thumb-accent) 0 62%, transparent 62%) 0 0 /
+      100% 6px no-repeat,
+    linear-gradient(90deg, hsla(0, 0%, 100%, 0.45) 0 48%, transparent 48%) 0
+      14px / 100% 6px no-repeat,
+    linear-gradient(90deg, var(--thumb-accent-2) 0 76%, transparent 76%) 0
+      28px / 100% 6px no-repeat;
+  border-radius: 10px;
+}
+
+.portfolio-thumb--github {
+  --thumb-accent: hsl(212, 12%, 68%);
+  --thumb-accent-2: hsl(141, 63%, 42%);
+  --thumb-bg: linear-gradient(135deg, hsl(220, 18%, 13%), hsl(217, 16%, 24%));
+}
+
+.portfolio-thumb--arxiv {
+  --thumb-accent: hsl(0, 60%, 58%);
+  --thumb-accent-2: hsl(36, 83%, 62%);
+  --thumb-bg: linear-gradient(135deg, hsl(350, 28%, 18%), hsl(24, 28%, 28%));
+}
+
+.portfolio-thumb--ieee {
+  --thumb-accent: hsl(203, 88%, 58%);
+  --thumb-accent-2: hsl(184, 70%, 48%);
+  --thumb-bg: linear-gradient(135deg, hsl(212, 52%, 18%), hsl(202, 50%, 30%));
+}
+
+.portfolio-thumb--cired {
+  --thumb-accent: hsl(158, 62%, 48%);
+  --thumb-accent-2: hsl(48, 82%, 58%);
+  --thumb-bg: linear-gradient(135deg, hsl(168, 45%, 17%), hsl(151, 38%, 28%));
+}
+
+.portfolio-thumb--repository {
+  --thumb-accent: hsl(214, 52%, 62%);
+  --thumb-accent-2: hsl(12, 56%, 58%);
+  --thumb-bg: linear-gradient(135deg, hsl(222, 30%, 18%), hsl(232, 22%, 30%));
+}
+
+.portfolio-thumb--elsevier {
+  --thumb-accent: hsl(24, 88%, 58%);
+  --thumb-accent-2: hsl(45, 86%, 58%);
+  --thumb-bg: linear-gradient(135deg, hsl(20, 48%, 18%), hsl(36, 43%, 29%));
+}
+
+.portfolio-thumb--mdpi {
+  --thumb-accent: hsl(352, 72%, 58%);
+  --thumb-accent-2: hsl(205, 72%, 58%);
+  --thumb-bg: linear-gradient(135deg, hsl(344, 38%, 19%), hsl(212, 33%, 29%));
+}
+
+.portfolio-thumb--springer {
+  --thumb-accent: hsl(190, 74%, 48%);
+  --thumb-accent-2: hsl(88, 54%, 54%);
+  --thumb-bg: linear-gradient(135deg, hsl(191, 45%, 17%), hsl(206, 36%, 28%));
+}
+
+[data-theme="light"] .portfolio-thumb {
+  --thumb-grid: hsla(220, 16%, 22%, 0.09);
+
+  color: var(--eerie-black-1);
+  box-shadow:
+    inset 0 0 0 1px hsla(0, 0%, 100%, 0.42),
+    var(--shadow-2);
+}
+
+[data-theme="light"] .portfolio-thumb::before {
+  opacity: 0.2;
+}
+
+[data-theme="light"] .portfolio-thumb__badge {
+  background: hsla(0, 0%, 100%, 0.64);
+  color: var(--eerie-black-1);
+  box-shadow: inset 0 0 0 1px hsla(220, 16%, 22%, 0.1);
+}
+
+[data-theme="light"] .portfolio-thumb__meta {
+  color: hsla(220, 16%, 22%, 0.72);
 }
 
 /* Responsive: featured publications grid */

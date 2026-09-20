@@ -1,6 +1,8 @@
 .venv/
 .playwright-mcp/
-docs/
+docs/*
+!docs/agents/
+!docs/agents/**
 .worktrees/
 tests/
 
